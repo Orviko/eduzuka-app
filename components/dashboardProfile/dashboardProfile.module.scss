@@ -1,0 +1,63 @@
+// imports
+@import '../../styles/variables';
+
+.wrapper {
+    position: relative;
+    display: flex;
+    .userProfile {
+        display: flex;
+        align-items: center;
+        gap: 0.625rem;
+        cursor: pointer;
+        .userImg {
+            display: inline-flex;
+            img {
+                border: 2px solid $primary !important;
+                border-radius: 50%;
+            }
+        }
+        .userName {
+            font-size: 1rem;
+            font-weight: 500;
+        }
+        .icon {
+            font-size: 0.75rem;
+        }
+    }
+    .userMenu {
+        padding-top: 1rem;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(1rem);
+        transition: 0.25s;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        .menuLists {
+            background-color: $white;
+            border-radius: 0.25rem;
+            box-shadow: 0px 15px 35px rgba(0, 0, 0, 0.07);
+            li {
+                a {
+                    position: relative;
+                    display: flex;
+                    align-items: center;
+                    column-gap: 0.5rem;
+                    font-size: 0.875rem;
+                    padding: 0.75rem 1rem;
+                    &:hover {
+                        background-color: $neutral-5;
+                    }
+                }
+            }
+        }
+    }
+    &:hover {
+        .userMenu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+    }
+}

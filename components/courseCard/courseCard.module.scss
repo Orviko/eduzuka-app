@@ -1,0 +1,131 @@
+// imports
+@import '../../styles/variables';
+
+.card {
+    position: relative;
+    background-color: $white;
+    padding: 1.25rem 1.875rem 2.5rem;
+    border-radius: 0.625rem;
+    box-shadow: 0px 15px 35px rgba(0, 0, 0, 0.07);
+    @media (max-width: map-get($breakpoints, sm)) {
+        padding: 1.25rem 1.25rem 1.5rem;
+    }
+}
+
+.imgBox {
+    position: relative;
+    display: flex;
+    border-radius: 0.313rem;
+    aspect-ratio: 26 / 17;
+    overflow: hidden;
+    &::before {
+        content: '';
+        background-color: rgba($black, 30%);
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+    }
+    span:not(.courseTime) {
+        width: 100% !important;
+    }
+}
+
+.playBtn {
+    $size: 3rem;
+    width: $size;
+    height: $size;
+    color: $secondary;
+    background-color: $white;
+    padding: 0;
+    border: 1px solid $secondary;
+    border-radius: 50%;
+    outline: 0;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    @media (max-width: map-get($breakpoints, sm)) {
+        $size: 2.5rem;
+        width: $size;
+        height: $size;
+    }
+}
+
+.courseTime {
+    background-color: $white;
+    color: $neutral-2;
+    font-size: 0.875rem;
+    padding: 0.25rem 0.625rem;
+    border-radius: 0.313rem;
+    position: absolute;
+    bottom: 1.875rem;
+    left: 1.688rem;
+    z-index: 2;
+    @media (max-width: map-get($breakpoints, sm)) {
+        font-size: 0.813rem;
+        bottom: 0.75rem;
+        left: 0.5rem;
+    }
+}
+
+.cardBody {
+    position: relative;
+    margin-top: 1.25rem;
+}
+
+.header {
+    .subtitle {
+        font-size: 0.875rem;
+        &.--2 {
+            color: $neutral-3;
+        }
+    }
+
+    .title {
+        text-align: left;
+        text-transform: uppercase;
+        margin: 0.625rem 0;
+    }
+}
+
+.instructor {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    margin: 1.25rem 0 1.875rem;
+    .instructorImg {
+        img {
+            border: 2px solid $primary-2 !important;
+            border-radius: 50%;
+        }
+    }
+    .name {
+        font-size: 1rem;
+        font-weight: 500;
+        margin-bottom: 0.188rem;
+    }
+    .title {
+        font-size: 0.75rem;
+        font-weight: 500;
+    }
+}
+
+.shareWrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.938rem;
+    margin-top: 1.25rem;
+    flex-wrap: wrap;
+    .shareBtn {
+        display: flex;
+        align-items: center;
+        gap: 0.625rem;
+        color: $primary-2;
+        font-size: 0.875rem;
+        font-weight: 700;
+    }
+}

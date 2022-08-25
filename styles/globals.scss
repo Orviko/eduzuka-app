@@ -1,0 +1,57 @@
+// imports
+@import './reset';
+@import './variables';
+
+
+// base,
+*,
+::before,
+::after {
+    font-family: $font;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    color: $neutral !important;
+    background-color: $body-bg !important;
+    font-size: clamp(0.938rem, 1vw + 0.5rem, 1rem);
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    > * {
+        width: 100%;
+    }
+    @media (min-width: map-get($breakpoints, lg)) {
+        flex-direction: row;
+        > * {
+            width: 50%;
+            flex-basis: 50%;
+        }
+    }
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type='number'] {
+    -moz-appearance: textfield;
+}
+input:-webkit-autofill {
+    box-shadow: 0 0 0 30px white inset;
+}
+textarea {
+    resize: vertical;
+}
+
+// next error
+.next-error-h1 {
+    border-color: $neutral !important;
+}

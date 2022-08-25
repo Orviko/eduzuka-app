@@ -1,0 +1,11 @@
+// imports
+@import '../../styles/variables';
+
+.courseDetails {
+    position: relative;
+    display: grid;
+    gap: 4.75rem;
+    @media (min-width: map-get($breakpoints, lg)) {
+        grid-template-columns: 1fr $courseDetailsRight;
+    }
+}

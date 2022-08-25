@@ -1,0 +1,46 @@
+// imports
+@import '../../styles/variables';
+
+.ratingReviews {
+    position: relative;
+}
+
+.title {
+    color: $secondary;
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 1.875rem;
+    line-height: 1.1;
+}
+
+.ratingReviewsFooter {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 0.625rem;
+}
+
+.reviewsWrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    span {
+        font-weight: 700;
+    }
+    .reviews {
+        display: flex;
+        gap: 0.313rem;
+        li {
+            color: $secondary;
+            flex-grow: 1;
+        }
+    }
+}
+
+.submitBtn {
+    @media (min-width: map-get($breakpoints, lg)) {
+        padding-left: 3.938rem;
+        padding-right: 3.938rem;
+    }
+}

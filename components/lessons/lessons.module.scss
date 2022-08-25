@@ -1,0 +1,50 @@
+// imports
+@import '../../styles/variables';
+
+.lessons {
+    position: relative;
+}
+
+.lessonsTitle {
+    text-align: left;
+}
+
+.lessonLists {
+    margin-top: 1.25rem;
+    margin-bottom: 1.25rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid $neutral-4;
+    li {
+        padding: 0.938rem 1.25rem;
+        display: flex;
+        border-bottom: 1px solid $soft-stoke;
+        line-height: 1.8;
+        cursor: pointer;
+        &:hover,
+        &.active {
+            background-color: $clr;
+        }
+        .count {
+            color: $secondary;
+            font-weight: 700;
+            margin-right: 0.5em;
+        }
+    }
+}
+
+.expandLessonsBtn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.625rem;
+    background-color: transparent;
+    color: $primary;
+    font-weight: 700;
+    padding: 0;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    &:hover {
+        text-decoration: underline;
+        text-underline-offset: 0.35em;
+    }
+}

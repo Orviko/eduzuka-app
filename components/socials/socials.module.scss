@@ -1,0 +1,97 @@
+// imports
+@import '../../styles/variables';
+
+.socialLists {
+    display: flex;
+    gap: 0.938rem;
+    flex-wrap: wrap;
+    li {
+        a {
+            $size: 1.75rem;
+            width: $size;
+            height: $size;
+            align-items: center;
+            justify-content: center;
+            color: $primary-2;
+            font-size: 0.75rem;
+            border: 1px solid $primary-2;
+            border-radius: 50%;
+            transition: 0.35s;
+            &:hover {
+                background-color: $primary-2;
+                color: $white;
+            }
+        }
+    }
+}
+
+.socialLists2 {
+    display: flex;
+    gap: 0.938rem;
+    flex-wrap: wrap;
+    &.center {
+        justify-content: center;
+    }
+    li {
+        a {
+            width: 2.875rem;
+            height: 2.188rem;
+            font-size: 1.25rem;
+            border: 1px solid $neutral-4;
+            display: grid;
+            place-items: center;
+            &.facebook {
+                color: $facebook;
+            }
+            &.linkedin {
+                font-size: 0.7rem;
+                span {
+                    width: 1.188rem;
+                    height: 1.188rem;
+                    display: grid;
+                    place-items: center;
+                    color: $white;
+                    border-radius: 50%;
+                    background-color: $black;
+                }
+            }
+        }
+    }
+}
+
+.socialLists3 {
+    display: flex;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+    li {
+        a {
+            position: relative;
+            $size: 1.75rem;
+            width: $size;
+            height: $size;
+            background-color: $primary;
+            color: $white;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            &.facebook {
+                background-color: $facebook;
+            }
+            &.twitter {
+                background-color: $twitter;
+            }
+            &.telegram {
+                background-color: $telegram;
+            }
+            &.whatsapp {
+                background-color: $whatsapp;
+            }
+            &.envelope {
+                background-color: $envelope;
+            }
+            span {
+                font-size: 0.875rem;
+            }
+        }
+    }
+}

@@ -1,0 +1,107 @@
+// imports
+@import '../../styles/variables';
+
+.group {
+    position: relative;
+    display: flex;
+    align-items: center;
+    border: 1.5px solid $neutral-4;
+    &.codes {
+        padding-left: 1.25rem;
+    }
+    &.countries {
+        flex-direction: row-reverse;
+        padding-right: 1.25rem;
+    }
+}
+
+.inputGroup {
+    flex-grow: 1;
+}
+
+.input {
+    text-overflow: ellipsis;
+}
+
+.cpG {
+    color: $neutral-3;
+    .btn {
+        background-color: transparent;
+        padding: 0;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        column-gap: 0.25rem;
+        &.country {
+            column-gap: 0.375rem;
+        }
+        .code {
+            font-size: 0.813rem;
+        }
+        .arrow {
+            flex-shrink: 0;
+            border-top: 0.25rem solid $neutral-3;
+            border-right: 0.219rem solid transparent;
+            border-left: 0.219rem solid transparent;
+        }
+    }
+}
+
+.countryImg {
+    display: inline-flex;
+    flex-shrink: 0;
+    pointer-events: none;
+    user-select: none;
+}
+
+.selectBox {
+    position: absolute;
+    top: 100%;
+    left: -1.5px;
+    right: -1.5px;
+    background-color: $white;
+    color: $neutral-3;
+    transform: translateY(2px);
+    border: 1px solid transparent;
+    height: 0;
+    border-top: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.25s;
+    z-index: 10;
+    .countryLists {
+        overflow-x: hidden !important;
+        &::-webkit-scrollbar {
+            width: 0.35rem;
+        }
+        &::-webkit-scrollbar-track {
+            background-color: #f5f4f4;
+        }
+        &::-webkit-scrollbar-thumb {
+            background-color: $neutral-4;
+            border-radius: 0.25rem;
+            &:hover {
+                background-color: $neutral-3;
+            }
+        }
+        ul {
+            li {
+                display: flex;
+                align-items: center;
+                column-gap: 0.5rem;
+                font-size: 0.813rem;
+                padding: 0.35rem 1rem;
+                line-height: 1.25;
+                white-space: nowrap;
+                cursor: pointer;
+                &.current,
+                &:hover {
+                    background-color: lighten($neutral-4, 22%);
+                    color: $primary;
+                }
+            }
+        }
+    }
+}

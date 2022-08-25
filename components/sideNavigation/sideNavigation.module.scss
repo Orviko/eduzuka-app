@@ -1,0 +1,92 @@
+// imports
+@import '../../styles/variables';
+
+.sidebar {
+    position: relative;
+    background-color: $white;
+    border-radius: 0.625rem;
+    padding-bottom: 1.875rem;
+    box-shadow: 0px 15px 35px rgba(0, 0, 0, 0.07);
+    overflow: hidden;
+    &.between {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+}
+
+.title-2 {
+    background-color: $secondary;
+    color: $white;
+    padding: 1.188rem 1.875rem;
+    text-align: left;
+}
+
+.sidebarMenus,
+.sidebarMenusBottom {
+    li {
+        a {
+            position: relative;
+            display: flex;
+            align-items: center;
+            column-gap: 1rem;
+            padding: 0.938rem 1.25rem 0.813rem;
+            transition: 0.25s;
+            &:hover {
+                background-color: $neutral-5;
+            }
+        }
+    }
+}
+
+.sidebarMenus {
+    li {
+        a {
+            &:hover,
+            &.active {
+                background-color: $section-bg;
+                &::before {
+                    background-color: $secondary;
+                }
+                .icon {
+                    color: $secondary;
+                }
+            }
+            &::before {
+                content: '';
+                width: 0.25rem;
+                height: 1.688rem;
+                border-top-right-radius: 0.375rem;
+                border-bottom-right-radius: 0.375rem;
+                position: absolute;
+                left: 0;
+                transition: 0.35s;
+            }
+            .icon {
+                color: $primary;
+                transition: 0.25s;
+            }
+        }
+    }
+}
+
+.sidebarMenusBottom {
+    position: relative;
+    margin-top: clamp(6rem, 12vw + 3rem, 14.063rem);
+    &::before {
+        content: '';
+        height: 1px;
+        background-color: $soft-stoke;
+        position: absolute;
+        top: -1px;
+        left: 1.5rem;
+        right: 1.5rem;
+    }
+    li {
+        a {
+            .icon {
+                color: $neutral-2;
+            }
+        }
+    }
+}

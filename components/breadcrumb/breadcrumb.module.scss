@@ -1,0 +1,27 @@
+// imports
+@import '../../styles/variables';
+
+.breadcrumb {
+    position: relative;
+    ul {
+        display: flex;
+        gap: 0.625rem;
+        flex-wrap: wrap;
+        li {
+            display: flex;
+            align-items: center;
+            gap: 0.625rem;
+            color: $primary;
+            &:first-of-type {
+                font-weight: 700;
+            }
+            a {
+                position: relative;
+                &:hover {
+                    text-decoration: underline;
+                    text-underline-offset: 0.25em;
+                }
+            }
+        }
+    }
+}

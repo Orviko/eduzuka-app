@@ -1,0 +1,170 @@
+// imports
+@import '../../styles/variables';
+
+.header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 20;
+    transition: 0.25s;
+}
+
+.scroll {
+    background-color: $white;
+    box-shadow: 0px 5px 15px -2px rgba(0, 0, 0, 0.07);
+    .nav {
+        border: none;
+    }
+}
+
+.menuBar {
+    font-size: 1.75rem;
+    display: inline-flex;
+    background-color: transparent;
+    padding: 0;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 1.25rem;
+    border-bottom: 1px solid $border;
+    line-height: 1;
+    @media (max-width: map-get($breakpoints, lg)) {
+        padding-top: 1rem;
+    }
+    @media (max-width: map-get($breakpoints, md)) {
+        padding-top: 0.85rem;
+        padding-bottom: 1.05rem;
+    }
+    @media (max-width: map-get($breakpoints, sm)) {
+        padding-top: 0.75rem;
+        padding-bottom: 0.75rem;
+    }
+}
+
+.logo {
+    display: flex;
+    @media (min-width: map-get($breakpoints, lg)) {
+        padding-top: 1.188rem;
+    }
+    img {
+        pointer-events: none;
+    }
+    @media (max-width: map-get($breakpoints, lg)) {
+        width: calc(8rem + 4vw);
+    }
+}
+
+.overlay {
+    pointer-events: none;
+    user-select: none;
+    @media (max-width: map-get($breakpoints, lg)) {
+        position: fixed;
+        inset: 0;
+        background-color: rgba($black, 50%);
+        opacity: 0;
+        transition: 0.35s ease;
+    }
+}
+
+@media (max-width: map-get($breakpoints, lg)) {
+    .menusWrapper {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 28ch;
+        max-width: 100%;
+        margin-left: auto;
+        height: 100%;
+        background-color: $white;
+        flex-direction: column;
+        transform: translateX(100%);
+        overflow-y: auto;
+        transition: 0.35s ease;
+    }
+}
+
+.menus {
+    display: flex;
+    align-items: center;
+    column-gap: 1.25rem;
+    @media (max-width: map-get($breakpoints, lg)) {
+        flex-direction: column;
+    }
+    > li {
+        @media (min-width: map-get($breakpoints, lg)) {
+            &:last-child {
+                padding-top: 1.188rem;
+            }
+        }
+        @media (max-width: map-get($breakpoints, lg)) {
+            width: 100%;
+            border-bottom: 1px solid $border;
+            &:last-child {
+                padding: 1rem 1.5rem;
+            }
+        }
+        &:not(:last-child) {
+            a {
+                padding: 2rem 1.25rem 1.25rem;
+                @media (max-width: map-get($breakpoints, lg)) {
+                    padding: 1rem 1.5rem;
+                    display: flex;
+                }
+                &.active,
+                &:hover {
+                    color: $primary;
+                    background-color: $secondary-4;
+                    font-weight: 700;
+                }
+            }
+        }
+    }
+}
+
+.menuTopBar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid $border;
+    .logo {
+        width: calc(7rem + 2vw);
+        a {
+            padding: 0;
+        }
+    }
+    .menuClose {
+        display: flex;
+        font-size: 1.15rem;
+        background-color: transparent;
+        color: inherit;
+        padding: 0;
+        border-radius: 0.25rem;
+        border: none;
+        outline: none;
+        z-index: 5;
+        cursor: pointer;
+    }
+}
+
+.formBtn {
+    display: flex;
+    > * {
+        flex-grow: 1;
+    }
+}
+
+.button {
+    flex-grow: 1;
+    @media (min-width: map-get($breakpoints, lg)) {
+        padding-top: 0.938rem;
+        padding-bottom: 0.938rem;
+    }
+}

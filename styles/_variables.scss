@@ -1,0 +1,71 @@
+// Grid Breakpoints
+$breakpoints: (
+    xs2: 350px,
+    xs: 450px,
+    xsm2: 400px,
+    xsm: 480px,
+    sm: 576px,
+    md: 768px,
+    md2: 900px,
+    lg: 991.98px,
+    xl: 1200px,
+    xxl: 1320px,
+    xxxl: 1400px,
+);
+
+// layout
+$containerPadding: 1.25rem;
+$container: calc(1247px - $containerPadding);
+$container-2: calc(1300px - $containerPadding);
+$container-3: calc(1410px - $containerPadding);
+$minSideNavigation: 180px;
+$sideNavigation: 348px;
+$dashboardRightSide: 404px;
+$minDashboardRightSide: 230px;
+$courseDetailsRight: 400px;
+$eCard: 367px;
+
+// fonts
+$font: 'Montserrat', sans-serif;
+$font-2: 'Ubuntu', sans-serif;
+
+// colors
+$body-bg: #fff;
+$section-bg: #f8f8f8;
+$footer-bg: #eeeeee;
+
+$primary: #041366;
+$primary-2: #2e31fa;
+$primary-3: #5e8af3;
+$white: #ffffff;
+$black: #000000;
+$soft-stoke: #dddddd;
+$red: #ff3333;
+$secondary: #ff8b26;
+$secondary-2: #ffab17;
+$secondary-3: #ffb27a;
+$secondary-4: #dff6fe;
+$neutral: #111111;
+$neutral-2: #353535;
+$neutral-3: #5e5e5e;
+$neutral-4: #b5b5b5;
+$neutral-5: #f8f8f8;
+$gray: #c3c3c3;
+$success: #36b236;
+$error: #ff3333;
+$clr: #efefef;
+
+// borders
+$border: #dbdde5;
+$border-2: #e7e8f2;
+$border-3: #bbbbbb;
+
+// socials
+$facebook: #1876f1;
+$twitter: #00aced;
+$telegram: #039be5;
+$whatsapp: #25d366;
+$envelope: $secondary;
+
+// shadows
+$drop-shadow-deep: 5px 5px 15px rgba(#000, 15%);

@@ -1,0 +1,120 @@
+// imports
+@import '../../styles/variables';
+
+$imageOffset: 4.375rem;
+.eCard {
+    position: relative;
+    max-width: $eCard;
+    background-color: $white;
+    margin-top: $imageOffset;
+    padding: 1.563rem;
+    border-radius: 0.625rem;
+    box-shadow: 0px 15px 35px rgba(0, 0, 0, 0.07);
+}
+
+.imgBox {
+    position: relative;
+    display: flex;
+    margin-top: -$imageOffset;
+    &::before {
+        content: '';
+        background-image: linear-gradient(180.13deg, rgba(0, 0, 0, 0) -17.97%, rgba(0, 0, 0, 0.85) 99.88%);
+        border-radius: 0.625rem;
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        pointer-events: none;
+        user-select: none;
+    }
+    span {
+        width: 100% !important;
+        img {
+            border-radius: 0.625rem;
+        }
+    }
+}
+
+.eInfo {
+    color: $white;
+    position: absolute;
+    bottom: 1.25rem;
+    left: 1.25rem;
+    z-index: 2;
+    .eTor {
+        display: flex;
+        align-items: center;
+        gap: 0.625rem;
+        .eTorImg {
+            flex-shrink: 0;
+            img {
+                border: 2px solid $soft-stoke !important;
+                border-radius: 50%;
+            }
+        }
+        .eTorName {
+            font-size: 0.813rem;
+            font-weight: 700;
+            margin-bottom: 0.125rem;
+        }
+        .eTorTitle {
+            font-size: 0.688rem;
+            font-weight: 500;
+        }
+    }
+    .priceInfo {
+        font-size: 0.875rem;
+        font-weight: 700;
+        display: flex;
+        align-items: baseline;
+        gap: 0.35rem;
+        .price {
+            color: $secondary;
+            font-size: 1.25rem;
+        }
+    }
+}
+
+.cardBody {
+    position: relative;
+    color: $neutral-2;
+    margin-top: 0.938rem;
+    .title {
+        color: $primary;
+        font-size: 1.125rem;
+        font-weight: 700;
+        margin-bottom: 0.938rem;
+    }
+    .aboutFoot {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        margin: 1.563rem 0;
+        .lists {
+            li {
+                font-size: 0.875rem;
+                &:not(:last-of-type) {
+                    margin-bottom: 0.313rem;
+                }
+                span {
+                    font-weight: 700;
+                }
+            }
+        }
+        .react {
+            $size: 2.875rem;
+            width: $size;
+            height: $size;
+            background-color: $secondary-3;
+            color: $white;
+            font-size: 1rem;
+            padding: 0;
+            border-radius: 50%;
+            border: none;
+            outline: none;
+            display: grid;
+            place-items: center;
+            cursor: pointer;
+        }
+    }
+}
