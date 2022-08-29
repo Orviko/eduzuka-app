@@ -1,0 +1,66 @@
+// imports
+@import '../../styles/variables';
+
+.server {
+    position: relative;
+    flex-grow: 1;
+    min-height: 100%;
+    background-color: rgba($white, 35%);
+    padding: 1.875rem 1.25rem;
+}
+
+.serverView {
+    position: relative;
+    margin-bottom: 1.75rem;
+    .overlay {
+        position: absolute;
+        inset: 0;
+        background-image: linear-gradient(
+            180deg,
+            rgba(0, 0, 0, 0) 56.5%,
+            rgba(0, 0, 0, 0.509703) 70.7%,
+            rgba(0, 0, 0, 0.716463) 79.07%,
+            rgba(0, 0, 0, 0.9) 100%
+        );
+        border-radius: 0.625rem;
+        z-index: 2;
+    }
+    .imgBox {
+        display: flex;
+        position: relative;
+        z-index: 1;
+        span {
+            width: 100% !important;
+            aspect-ratio: 263 / 200;
+            img {
+                border-radius: 0.625rem;
+            }
+        }
+    }
+    .viewBottom {
+        position: absolute;
+        bottom: 1.188rem;
+        left: 0.625rem;
+        line-height: 1;
+        z-index: 3;
+        .viewTxt {
+            display: flex;
+            align-items: center;
+            gap: 0.625rem;
+            color: $secondary;
+            font-size: 0.875rem;
+            font-weight: 700;
+            cursor: pointer;
+            .icon {
+                font-size: 1rem;
+            }
+        }
+    }
+}
+
+.channels {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 0.938rem;
+}

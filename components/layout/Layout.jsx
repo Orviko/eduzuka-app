@@ -1,17 +1,16 @@
-import { HeaderProvider } from '../../contexts/HeaderContext';
-import { WindowProvider } from '../../contexts/WindowContext';
+import { useRouter } from 'next/router';
 import Footer from '../footer/Footer';
 import Header from '../header/Header';
 import styles from './layout.module.scss';
 
 export default function Layout({ children }) {
+    const router = useRouter();
+
     return (
-        <WindowProvider>
-            <HeaderProvider>
-                <Header />
-                <main className={styles.main}>{children}</main>
-                <Footer />
-            </HeaderProvider>
-        </WindowProvider>
+        <>
+            {router.pathname !== '/chat' && <Header />}
+            <main className={styles.main}>{children}</main>
+            {router.pathname !== '/chat' && <Footer />}
+        </>
     );
 }

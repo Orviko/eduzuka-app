@@ -3,7 +3,8 @@
 
 .wrapper {
     position: relative;
-    display: flex;
+    display: inline-flex;
+    line-height: 1;
     .userProfile {
         display: flex;
         align-items: center;
@@ -12,16 +13,35 @@
         .userImg {
             display: inline-flex;
             img {
-                border: 2px solid $primary !important;
                 border-radius: 50%;
+                border: 2px solid $primary !important;
+            }
+        }
+        &.style-2 {
+            .userImg {
+                img {
+                    border: none !important;
+                }
             }
         }
         .userName {
             font-size: 1rem;
             font-weight: 500;
         }
-        .icon {
+        &.style-2 {
+            .userName {
+                font-family: $font-2;
+                font-size: 1.125rem;
+            }
+        }
+        .userTitle {
             font-size: 0.75rem;
+            font-weight: 400;
+            color: $neutral-3;
+            margin-top: 0.188rem;
+        }
+        .icon {
+            font-size: 1rem;
         }
     }
     .userMenu {

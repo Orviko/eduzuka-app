@@ -1,0 +1,22 @@
+// imports
+@import '../../styles/variables';
+
+.section {
+    position: relative;
+    min-height: 100vh;
+}
+
+.leftSidebar {
+    width: calc($chat-left-side + $chat-left-channel-bar);
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+}
+
+.messageContainer {
+    position: relative;
+    margin-left: calc($chat-left-side + $chat-left-channel-bar);
+    padding: 1.875rem 2rem;
+}

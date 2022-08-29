@@ -4,6 +4,7 @@ export const HeaderContext = createContext(null);
 
 export function HeaderProvider({ value, children }) {
     const [headerHeight, setHeaderHeight] = useState(0);
+    const [chatHeaderHeight, setChatHeaderHeight] = useState(0);
     const [menuTopHeight, setMenuTopHeight] = useState(0);
     const [hContainerMWidth, sethHContainerMWidth] = useState(null);
     const [whichPathname, setWhichPathname] = useState('');
@@ -13,6 +14,8 @@ export function HeaderProvider({ value, children }) {
             value={{
                 headerHeight,
                 setHeaderHeight,
+                chatHeaderHeight,
+                setChatHeaderHeight,
                 hContainerMWidth,
                 sethHContainerMWidth,
                 whichPathname,
