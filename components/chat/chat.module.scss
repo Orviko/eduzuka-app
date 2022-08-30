@@ -14,9 +14,3 @@
     left: 0;
     bottom: 0;
 }
-
-.messageContainer {
-    position: relative;
-    margin-left: calc($chat-left-side + $chat-left-channel-bar);
-    padding: 1.875rem 2rem;
-}

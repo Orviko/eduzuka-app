@@ -6,6 +6,8 @@ import { UseHeaderContext } from '../../contexts/HeaderContext';
 import BgImg from '../bgImg/BgImg';
 import ChatHeader from '../chatHeader/ChatHeader';
 import ChatLeftSide from '../chatLeftSide/ChatLeftSide';
+import ChatMessages from '../chatMessages/ChatMessages';
+import ChatRightSide from '../chatRightSide/ChatRightSide';
 import ChatServer from '../chatServer/ChatServer';
 import styles from './chat.module.scss';
 
@@ -26,11 +28,8 @@ export default function Chat() {
                     <ChatServer />
                 </PerfectScrollBar>
             </div>
-            <main className={styles.messageContainer} style={{ marginTop: chatHeaderHeight }}>
-                <div className={styles.messageBox}>
-                    <div>ONLINE — 6</div>
-                </div>
-            </main>
+            <ChatMessages />
+            <ChatRightSide chatHeaderHeight={chatHeaderHeight} />
         </section>
     );
 }

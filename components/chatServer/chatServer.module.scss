@@ -64,3 +64,64 @@
     flex-direction: column;
     gap: 0.938rem;
 }
+
+.userProfile {
+    width: $chat-left-channel-bar;
+    background-color: $clr-6;
+    line-height: 1.25;
+    padding: 1.125rem 1.25rem 1.063rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    bottom: 0;
+    left: $chat-left-side;
+    z-index: 2;
+    .userInfo {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        .imgBox {
+            position: relative;
+            display: inline-flex;
+            .active {
+                $size: 0.625rem;
+                width: $size;
+                height: $size;
+                background-color: $active;
+                border-radius: 50%;
+                position: absolute;
+                right: 0;
+                bottom: 0;
+            }
+        }
+        .details {
+            .userName {
+                font-family: $font-2;
+                font-size: 0.875rem;
+                font-weight: 500;
+            }
+            .userTitle {
+                color: $neutral-3;
+                font-size: 0.75rem;
+                font-weight: 400;
+                margin-top: 1px;
+            }
+        }
+    }
+    .interactions {
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        .inter {
+            display: inline-flex;
+            color: $clr-7;
+            font-size: 1.25rem;
+            padding: 0;
+            border: none;
+            outline: none;
+            cursor: pointer;
+        }
+    }
+}
