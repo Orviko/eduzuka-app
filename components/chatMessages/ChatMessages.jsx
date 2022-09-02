@@ -6,6 +6,7 @@ import { FiImage } from 'react-icons/fi';
 import { RiSendPlaneFill } from 'react-icons/ri';
 import { VscSmiley } from 'react-icons/vsc';
 import PerfectScrollBar from 'react-perfect-scrollbar';
+import { useSwipeable } from 'react-swipeable';
 import calenderEdit from '../../assets/icons/calender-edit.svg';
 import { UseHeaderContext } from '../../contexts/HeaderContext';
 import ChatMgsItem from '../chatMgsItem/ChatMgsItem';
@@ -15,12 +16,33 @@ const DynamicPicker = dynamic(() => import('emoji-picker-react'), {
     ssr: false,
 });
 
-export default function ChatMessages() {
+export default function ChatMessages({ refsEl, mgsStyles, setMgsStyles }) {
     const [mgsBottomHeight, setMgsBottomHeight] = useState(0);
-    const { chatHeaderHeight } = UseHeaderContext();
-    const mgsBottomRef = useRef(null);
     const [chosenEmoji, setChosenEmoji] = useState(null);
     const [isVisibleEmoji, setIsVisibleEmoji] = useState(false);
+    const { chatHeaderHeight } = UseHeaderContext();
+    const mgsBottomRef = useRef(null);
+    const swipeHandlers = useSwipeable({
+        onSwipedLeft: () => {
+            setMgsStyles((prevState) => ({
+                ...prevState,
+                mgsTtX: mgsStyles.rightSidebar,
+                rightTtX: 0,
+                leftTtX: '-100%',
+                mgsPointer: 'none',
+            }));
+        },
+        onSwipedRight: () => {
+            setMgsStyles((prevState) => ({
+                ...prevState,
+                ml: mgsStyles.leftSidebarW,
+                left: `calc(${mgsStyles.leftSidebarW}px + 2rem)`,
+                leftTtX: 0,
+                mgsPointer: 'none',
+            }));
+        },
+        preventScrollOnSwipe: true,
+    });
 
     const getMgsHeight = useCallback(() => {
         setMgsBottomHeight(mgsBottomRef.current.getBoundingClientRect().height);
@@ -41,7 +63,11 @@ export default function ChatMessages() {
             style={{
                 paddingTop: chatHeaderHeight / 16 + 1.875 + 'rem',
                 paddingBottom: mgsBottomHeight / 16 + 2 + 'rem',
+                marginLeft: mgsStyles.ml,
+                transform: `translateX(-${mgsStyles.mgsTtX}px)`,
+                pointerEvents: mgsStyles.mgsPointer,
             }}
+            {...swipeHandlers}
         >
             <PerfectScrollBar>
                 <div
@@ -113,7 +139,7 @@ export default function ChatMessages() {
                     </div>
                 </div>
             </PerfectScrollBar>
-            <div className={styles.mgsBottom} ref={mgsBottomRef}>
+            <div className={styles.mgsBottom} ref={mgsBottomRef} style={{ left: mgsStyles.left }}>
                 <div className={styles.mgsReacts}>
                     <div className={styles.reactBtnWrapper}>
                         <input type="file" name="mgsFile" id="mgsFile" hidden style={{ display: 'none' }} />

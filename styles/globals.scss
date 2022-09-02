@@ -2,7 +2,6 @@
 @import './reset';
 @import './variables';
 
-
 // base,
 *,
 ::before,
@@ -54,4 +53,11 @@ textarea {
 // next error
 .next-error-h1 {
     border-color: $neutral !important;
+}
+
+@media (max-width: map-get($breakpoints, lg)) {
+    .ps__rail-y {
+        pointer-events: none;
+        user-select: none;
+    }
 }

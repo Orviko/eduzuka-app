@@ -2,11 +2,15 @@
 @import '../../styles/variables';
 
 .server {
+    width: $chat-left-channel-bar;
     position: relative;
     flex-grow: 1;
     min-height: 100%;
     background-color: rgba($white, 35%);
     padding: 1.875rem 1.25rem;
+    @media (max-width: map-get($breakpoints, lg)) {
+        width: $chat-left-channel-bar - $chat-left-channel-bar-dec;
+    }
 }
 
 .serverView {
@@ -51,6 +55,10 @@
             font-size: 0.875rem;
             font-weight: 700;
             cursor: pointer;
+            @media (max-width: map-get($breakpoints, lg)) {
+                gap: 0.5rem;
+                font-size: 0.85rem;
+            }
             .icon {
                 font-size: 1rem;
             }
@@ -63,6 +71,9 @@
     display: flex;
     flex-direction: column;
     gap: 0.938rem;
+    @media (max-width: map-get($breakpoints, lg)) {
+        gap: 0.65rem;
+    }
 }
 
 .userProfile {
@@ -77,6 +88,10 @@
     bottom: 0;
     left: $chat-left-side;
     z-index: 2;
+    @media (max-width: map-get($breakpoints, lg)) {
+        left: $chat-left-side - $chat-left-side-dec;
+        width: $chat-left-channel-bar - $chat-left-channel-bar-dec;
+    }
     .userInfo {
         display: flex;
         align-items: center;

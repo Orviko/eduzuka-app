@@ -1,13 +1,47 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { useEffect } from 'react';
 import { AiOutlinePlus } from 'react-icons/ai';
 import PerfectScrollBar from 'react-perfect-scrollbar';
+import { useSwipeable } from 'react-swipeable';
 import richPresence from '../../assets/icons/rich-presence.svg';
 import styles from './chatRightSide.module.scss';
 
-export default function ChatRightSide({ chatHeaderHeight }) {
+export default function ChatRightSide({ chatHeaderHeight, refsEl, mgsStyles, setMgsStyles }) {
+    const swipeHandlers = useSwipeable({
+        onSwipedRight: () => {
+            setMgsStyles((prevState) => ({
+                ...prevState,
+                mgsTtX: 0,
+                rightTtX: '100%',
+                mgsPointer: 'auto',
+            }));
+        },
+        preventScrollOnSwipe: true,
+    });
+
+    useEffect(() => {
+        setMgsStyles((prevState) => ({
+            ...prevState,
+            rightSidebar: refsEl.rightSidebar.getBoundingClientRect().width,
+        }));
+    }, [refsEl.rightSidebar, setMgsStyles]);
+
+    const refPassthrough = (el) => {
+        swipeHandlers.ref(el);
+        refsEl.rightSidebar = el;
+    };
+
     return (
-        <aside className={styles.sidebar} style={{ top: chatHeaderHeight }}>
+        <aside
+            className={styles.sidebar}
+            style={{
+                top: chatHeaderHeight,
+                transform: `translateX(${mgsStyles.rightTtX})`,
+            }}
+            {...swipeHandlers}
+            ref={refPassthrough}
+        >
             <div className={styles.sidebarInner} style={{ height: `calc(100% - ${chatHeaderHeight}px)` }}>
                 <PerfectScrollBar>
                     <div className={styles.boxWrapper}>

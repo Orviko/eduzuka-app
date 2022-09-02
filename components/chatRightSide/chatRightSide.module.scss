@@ -8,6 +8,11 @@
     position: fixed;
     top: 0;
     right: 0;
+    transition: 0.25s;
+    @media (max-width: map-get($breakpoints, lg)) {
+        transform: translateX(100%);
+        width: $chat-right-side - $chat-right-side-dec;
+    }
 }
 
 .sidebarInner {

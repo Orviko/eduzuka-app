@@ -6,12 +6,14 @@ import { FiSearch } from 'react-icons/fi';
 import adjustIcon from '../../assets/icons/adjust-setting.svg';
 import notification from '../../assets/icons/notification.svg';
 import { UseHeaderContext } from '../../contexts/HeaderContext';
+import { UseWindowContext } from '../../contexts/WindowContext';
 import logo from '../../public/logo.svg';
 import DashboardProfile from '../dashboardProfile/DashboardProfile';
 import styles from './chatHeader.module.scss';
 
 export default function ChatHeader() {
     const { setChatHeaderHeight } = UseHeaderContext();
+    const { windowWidth } = UseWindowContext();
     const headerRef = useRef(null);
 
     const getHeaderHeight = useCallback(() => {
@@ -68,7 +70,7 @@ export default function ChatHeader() {
                         <Image src={notification} alt="Notification" />
                     </button>
                 </div>
-                <DashboardProfile variant="style-2" />
+                {windowWidth > 992 && <DashboardProfile variant="style-2" />}
             </div>
         </header>
     );

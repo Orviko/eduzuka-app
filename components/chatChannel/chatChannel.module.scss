@@ -12,6 +12,9 @@
         font-weight: 700;
         color: $primary;
         cursor: pointer;
+        @media (max-width: map-get($breakpoints, lg)) {
+            font-size: 0.9rem;
+        }
     }
     .contentsBox {
         margin-top: 1.25rem;
@@ -35,6 +38,10 @@
                     font-weight: 600;
                     padding: 0.625rem 1.125rem;
                     transition: 0.35s;
+                    @media (max-width: map-get($breakpoints, lg)) {
+                        padding: 0.5rem 1.1rem;
+                        font-size: 0.8rem;
+                    }
                     &:hover,
                     &.active {
                         background-color: $soft-stoke;
