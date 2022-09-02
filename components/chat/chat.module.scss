@@ -8,6 +8,7 @@
 
 .leftSidebar {
     width: calc($chat-left-side + $chat-left-channel-bar);
+    max-width: 100%;
     display: flex;
     position: fixed;
     top: 0;
