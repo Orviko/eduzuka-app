@@ -1,0 +1,120 @@
+// imports
+@import '../../styles/variables';
+
+.section {
+    padding-bottom: 0;
+}
+
+.container {
+    max-width: $container-2;
+}
+
+.row {
+    column-gap: 2.375rem;
+    row-gap: 5rem;
+}
+
+.subtitle {
+    margin-bottom: 0.938rem;
+}
+
+.heading {
+    font-size: clamp(1.35rem, 7vw + 0.5rem, 3.875rem);
+}
+
+.text {
+    font-size: clamp(0.938rem, 1vw + 0.5rem, 1.125rem);
+    margin-top: 1.25rem;
+}
+
+.buttonsGroup {
+    display: flex;
+    gap: 1.25rem;
+    margin: 2.5rem 0 3.75rem;
+    @media (max-width: map-get($breakpoints, lg)) {
+        justify-content: center;
+        margin: 2.25rem 0 3.5rem;
+    }
+    @media (max-width: map-get($breakpoints, md)) {
+        gap: 1rem;
+        margin: 2rem 0 3rem;
+    }
+    @media (max-width: map-get($breakpoints, sm)) {
+        margin: 1.5rem 0 2.5rem;
+    }
+}
+
+.followUs {
+    display: flex;
+    align-items: center;
+    gap: 1.875rem;
+    @media (max-width: map-get($breakpoints, lg)) {
+        justify-content: center;
+    }
+}
+
+.followText {
+    color: $neutral-3;
+    font-weight: 700;
+}
+
+.heroImgPart {
+    position: relative;
+}
+
+.heroImgBg {
+    position: relative;
+    @media (max-width: map-get($breakpoints, lg)) {
+        width: fit-content;
+        margin: 0 auto;
+    }
+}
+
+.personBg {
+    position: absolute;
+    inset: 0;
+    transform: translateY(2.375rem);
+    z-index: -1;
+    pointer-events: none;
+    user-select: none;
+}
+
+.aboutPerson {
+    position: absolute;
+    left: -1.063rem;
+    bottom: clamp(1.25rem, 10vw + 0.5rem, 9.375rem);
+    display: flex;
+    align-items: center;
+    gap: 0.938rem;
+    background-color: $white;
+    padding: 0.625rem 1.25rem;
+    border-radius: 0.688rem;
+    box-shadow: $drop-shadow-deep;
+    @media (max-width: map-get($breakpoints, sm)) {
+        left: 0;
+    }
+}
+
+.aboutText {
+    font-size: 0.625rem;
+}
+
+.aboutRating {
+    display: flex;
+    align-items: center;
+    gap: 0.313rem;
+}
+
+.ratingCount {
+    font-size: 0.875rem;
+}
+
+.ratings {
+    display: flex;
+    align-items: center;
+    gap: 0.438rem;
+    li {
+        font-size: 0.601rem;
+        color: $secondary;
+    }
+}

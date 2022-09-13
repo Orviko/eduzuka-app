@@ -1,0 +1,13 @@
+// imports
+@import '../../styles/variables';
+
+.section {
+    position: relative;
+    padding: 7.188rem 0;
+    @media (max-width: map-get($breakpoints, lg)) {
+        padding: 6rem 0;
+    }
+    @media (max-width: map-get($breakpoints, md)) {
+        padding: 5rem 0;
+    }
+}

@@ -1,0 +1,18 @@
+// imports
+@import '../../styles/variables';
+
+.slider {
+    background-color: $primary;
+    color: $white;
+    padding: 9.75rem 5rem;
+    border-radius: 0.625rem;
+    @media (max-width: map-get($breakpoints, lg)) {
+        padding: 8rem 4rem;
+    }
+    @media (max-width: map-get($breakpoints, md)) {
+        padding: 7rem 3rem;
+    }
+    @media (max-width: map-get($breakpoints, sm)) {
+        padding: 5rem 2rem;
+    }
+}

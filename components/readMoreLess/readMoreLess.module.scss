@@ -1,0 +1,24 @@
+// imports
+@import '../../styles/variables';
+
+.readMore {
+    position: relative;
+    overflow: hidden;
+    transition: 0.25s;
+}
+
+.readMoreBtn {
+    background-color: transparent;
+    color: $primary;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-top: 0.938rem;
+    padding: 0;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    &:hover {
+        text-decoration: underline;
+        text-underline-offset: 0.15em;
+    }
+}

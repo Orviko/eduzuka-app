@@ -1,0 +1,22 @@
+// imports
+@import '../../styles/variables';
+
+.section {
+    background-color: $primary;
+    color: $white;
+    padding: 3.125rem 0;
+}
+
+.newsletter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2.5rem;
+    @media (max-width: map-get($breakpoints, lg)) {
+        flex-direction: column;
+    }
+}
+
+.heading-2 {
+    margin-bottom: 0.625rem;
+}

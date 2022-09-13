@@ -1,0 +1,32 @@
+// imports
+@import '../../styles/variables';
+
+.section {
+    background-color: $section-bg;
+}
+
+.row {
+    gap: 4.75rem;
+    @media (max-width: map-get($breakpoints, xl)) {
+        gap: 2.75rem;
+    }
+}
+
+.text {
+    margin: 1.25rem 0 2.5rem;
+}
+
+.productContainer {
+    flex-basis: 60%;
+    display: grid;
+    gap: 1.5rem;
+    @media (min-width: map-get($breakpoints, md)) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.diff {
+    @media (min-width: map-get($breakpoints, md)) {
+        transform: translateY(3.75rem);
+    }
+}

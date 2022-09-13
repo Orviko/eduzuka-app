@@ -1,0 +1,33 @@
+// imports
+@import '../../styles/variables';
+
+.product {
+    position: relative;
+    background-color: $white;
+    text-align: center;
+    padding: 2.5rem 2rem;
+    box-shadow: 0px 15px 35px rgba(0, 0, 0, 0.1);
+    border-radius: 0.688rem;
+    transition: 0.25s;
+    &:hover {
+        background-color: $neutral-2;
+        color: $white;
+    }
+}
+
+.icon {
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+.title {
+    font-weight: 700;
+    line-height: 1.5;
+    margin: 1.875rem 0 0.938rem;
+}
+
+.desc {
+    font-size: 0.875rem;
+    line-height: 1.5;
+}

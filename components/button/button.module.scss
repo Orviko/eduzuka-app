@@ -1,0 +1,126 @@
+// imports
+@import '../../styles/variables';
+
+/**
+--- variants ---
+    style-2,
+    style-3,
+    style-4,
+    style-5,
+    style-6,
+    style-7,
+    style-8,
+**/
+
+.btnHelper {
+    display: flex;
+    @media (max-width: map-get($breakpoints, lg)) {
+        justify-content: center;
+    }
+    &.center {
+        justify-content: center;
+    }
+}
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.625rem;
+    background-color: transparent;
+    font-size: clamp(0.875rem, 1vw + 0.5rem, 1rem);
+    font-weight: 600;
+    white-space: nowrap;
+    padding: 1.25rem 1.875rem;
+    border: 1px solid $neutral;
+    border-radius: 0.438rem;
+    cursor: pointer;
+    transition: 0.35s ease;
+    justify-content: center;
+    @media (max-width: map-get($breakpoints, lg)) {
+        padding: 1rem 1.5rem;
+    }
+    @media (max-width: map-get($breakpoints, sm)) {
+        padding: 0.75rem 1.25rem;
+    }
+    &[type='submit'] {
+        width: 100%;
+        padding-top: 0.813rem;
+        padding-bottom: 0.813rem;
+        border-radius: 0;
+    }
+    &:hover,
+    &.style-2,
+    &[type='submit'] {
+        background-color: $primary;
+        color: $white;
+        border-color: $primary;
+    }
+    &.style-2,
+    &[type='submit'] {
+        &:not([type='submit']) {
+            font-weight: 700;
+        }
+        &:hover {
+            background-color: $primary-2;
+            border-color: $primary-2;
+        }
+    }
+    &.style-3 {
+        color: $white;
+        padding: 0.625rem 1.875rem;
+        border-color: $white;
+        &:hover {
+            background-color: $white;
+            color: $primary;
+        }
+    }
+    &.style-4,
+    &.style-5 {
+        color: $white;
+        padding: 0.5rem 1.25rem;
+    }
+    &.style-4,
+    &.style-7 {
+        width: 100%;
+        background-color: $secondary;
+        border-color: $secondary;
+        &:hover {
+            background-color: $primary-2;
+            border-color: $primary-2;
+        }
+    }
+    &.style-5,
+    &.style-8 {
+        background-color: $primary;
+        border-color: $primary;
+        &:hover {
+            background-color: $primary-2;
+            border-color: $primary-2;
+        }
+    }
+    &.style-6 {
+        border-radius: 0.438rem;
+    }
+    &.style-7,
+    &.style-8 {
+        color: $white;
+        padding-top: 0.813rem;
+        padding-bottom: 0.813rem;
+    }
+    &.style-8 {
+        width: 100%;
+    }
+    .icon {
+        font-size: 1.25rem;
+        @media (max-width: map-get($breakpoints, lg)) {
+            font-size: 1.15rem;
+        }
+        @media (max-width: map-get($breakpoints, md)) {
+            font-size: 1rem;
+        }
+        path {
+            color: inherit;
+            stroke: inherit;
+        }
+    }
+}

@@ -1,0 +1,16 @@
+// imports
+@import '../../styles/variables';
+
+.inputGroup {
+    display: flex;
+    gap: 0.938rem;
+    @media (min-width: map-get($breakpoints, sm)) {
+        > * {
+            width: 50%;
+            flex-basis: 50%;
+        }
+    }
+    @media (max-width: map-get($breakpoints, sm)) {
+        flex-direction: column;
+    }
+}

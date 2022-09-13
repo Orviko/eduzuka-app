@@ -1,0 +1,88 @@
+// imports
+@import '../../styles/variables';
+
+.card {
+    position: relative;
+    display: flex;
+    gap: 0.938rem;
+    background-color: $white;
+    padding: 0.938rem;
+    border-radius: 0.625rem;
+    box-shadow: 0px 15px 35px rgba(0, 0, 0, 0.07);
+    @media (max-width: map-get($breakpoints, xsm2)) {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.imgBox {
+    flex-shrink: 0;
+    position: relative;
+    border-radius: 0.313rem;
+    overflow: hidden;
+    @media (min-width: map-get($breakpoints, xsm2)) and (max-width: map-get($breakpoints, sm)) {
+        width: 9rem;
+    }
+    span {
+        height: 100% !important;
+    }
+}
+
+.timeReact {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    position: absolute;
+    bottom: 0.625rem;
+    left: 0.625rem;
+    .time {
+        background-color: $white;
+        color: $neutral-2;
+        font-size: 0.875rem;
+        padding: 0.25rem 0.625rem;
+        border-radius: 0.313rem;
+    }
+    .react {
+        width: 1.813rem;
+        height: 1.813rem;
+        background-color: $secondary;
+        color: $white;
+        font-size: 0.649rem;
+        border-radius: 50%;
+        border: none;
+        outline: none;
+        cursor: pointer;
+    }
+}
+
+.desc {
+    line-height: 1.25;
+    @media (max-width: map-get($breakpoints, xsm2)) {
+        text-align: center;
+    }
+}
+
+.userInfo {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    margin-top: 0.938rem;
+    @media (max-width: map-get($breakpoints, xsm2)) {
+        justify-content: center;
+    }
+    .userImg {
+        img {
+            border-radius: 50%;
+            border: 2px solid $primary-2 !important;
+        }
+    }
+    .name {
+        font-size: 0.75rem;
+        font-weight: 700;
+    }
+    .title {
+        color: $neutral-3;
+        font-size: 0.75rem;
+        font-weight: 400;
+    }
+}

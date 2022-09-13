@@ -1,0 +1,25 @@
+// imports
+@import '../../styles/variables';
+
+.container {
+    max-width: none;
+}
+
+.dashboard {
+    display: grid;
+    column-gap: 1.25rem;
+    row-gap: 4rem;
+    @media (min-width: map-get($breakpoints, lg)) {
+        grid-template-columns: minmax($minSideNavigation, $sideNavigation) 1fr minmax(
+                $minDashboardRightSide,
+                $dashboardRightSide
+            );
+    }
+}
+
+.dashboardMiddle {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}

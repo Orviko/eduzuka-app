@@ -1,0 +1,38 @@
+// imports
+@import '../../styles/variables';
+
+@media (max-width: map-get($breakpoints, lg)) {
+    .formBox {
+        order: -1;
+    }
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.text,
+.text2 {
+    font-size: 0.875rem;
+    text-align: center;
+    line-height: 1.5;
+}
+
+.text {
+    a {
+        color: $primary;
+        font-weight: 700;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+.text2 {
+    margin-bottom: 0.625rem;
+    a:hover {
+        text-decoration: underline;
+    }
+}

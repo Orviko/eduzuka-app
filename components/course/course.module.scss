@@ -1,0 +1,71 @@
+// imports
+@import '../../styles/variables';
+
+.course {
+    position: relative;
+    background-color: $white;
+    padding: 0.938rem;
+    border-radius: 0.625rem;
+    box-shadow: 0px 15px 35px rgba(0, 0, 0, 0.07);
+}
+
+.imgBox {
+    position: relative;
+    height: 17ch;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.time {
+    position: absolute;
+    bottom: 1.563rem;
+    left: 1.563rem;
+    background-color: $white;
+    font-size: 0.875rem;
+    color: $neutral-2;
+    padding: 0.25rem 0.625rem;
+    border-radius: 0.313rem;
+}
+
+.body {
+    display: flex;
+    flex-direction: column;
+    padding: 0.938rem;
+    margin-top: 0.938rem;
+    border: 1px solid;
+    border-radius: 0.625rem;
+    &.active {
+        border-color: $success;
+        .icon {
+            color: $success;
+        }
+    }
+    &.error {
+        border-color: $error;
+        .icon {
+            color: $error;
+        }
+    }
+    .header {
+        display: flex;
+        align-items: center;
+        column-gap: 0.5rem;
+        justify-content: space-between;
+        .title {
+            font-size: 1rem;
+            font-weight: 700;
+            color: $primary;
+        }
+        .icon {
+            font-size: 1.25rem;
+        }
+    }
+    .desc {
+        text-align: left;
+        margin: 0.625rem 0 1.25rem;
+        line-height: 1.25;
+    }
+    .btnHelper {
+        margin-top: auto;
+    }
+}

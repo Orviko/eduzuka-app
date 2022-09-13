@@ -1,0 +1,28 @@
+// imports
+@import '../../styles/variables';
+
+.offer {
+    position: relative;
+    background-color: $white;
+    padding: 0.938rem;
+    border-radius: 0.625rem;
+    box-shadow: 0px 15px 35px rgba(0, 0, 0, 0.07);
+    z-index: 1;
+    overflow: hidden;
+}
+
+.title {
+    font-size: clamp(1.25rem, 2vw + 0.5rem, 1.875rem);
+    > span {
+        display: flex;
+        column-gap: 0.25em;
+    }
+    .highlight {
+        color: $secondary;
+        font-weight: 400;
+    }
+}
+
+.desc {
+    margin: 0.625rem 0 1.875rem;
+}

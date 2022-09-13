@@ -1,0 +1,11 @@
+.imgBox {
+    margin: 1.25rem 0 2.375rem;
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+.button {
+    $dotHeight: 1.25rem;
+    margin: 2.5rem 0 calc(3.125rem + $dotHeight);
+}
